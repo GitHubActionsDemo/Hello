@@ -12,8 +12,8 @@ on:
 jobs:
   build:
 
-    runs-on: Demo
-   
+    runs-on:
+     group: Default
     
     strategy:
       matrix:
