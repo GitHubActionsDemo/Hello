@@ -11,8 +11,8 @@ on:
 jobs:
   build:
   
-    runs-on: 
-     group: Demo
+    runs-on: ubuntu-latest
+    
     
     steps:
      
@@ -31,5 +31,5 @@ jobs:
      - uses: actions/download-artifact@v3
        with:
         name: MyArtifacts
-        path: ./ArtifactsTrial
+        path: ArtifactsFolder
 
