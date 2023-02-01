@@ -15,18 +15,18 @@ jobs:
      group: Demo
     
     steps:
-    
-     - uses: actions/checkout@v3
      
      - name: create an artifact from the workflow
        run: |
+        mkdir ArtifactsFolder
+        cd ArtifactsFolder
         echo 'Hello Mahran and Fahd, nice to meet you' > Greeting.html
         echo 'This is our second demo for github actions' > Info.html
      
      - uses: actions/upload-artifact@v3
        with:
         name: MyArtifacts
-        path: .
+        path: ArtifactsFolder
         
      - uses: actions/download-artifact@v3
        with:
