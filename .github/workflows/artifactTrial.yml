@@ -1,0 +1,35 @@
+name: ArtifactTrial
+
+on: 
+ push:
+  branches: ["master"]
+  
+ pull_request:
+  branches: ["master"]
+
+  
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    
+    
+    steps:
+     
+     - name: create an artifact from the workflow
+       run: |
+        mkdir ArtifactsFolder
+        cd ArtifactsFolder
+        echo 'Hello Mahran and Fahd, nice to meet you' > Greeting.html
+        echo 'This is our second demo for github actions' > Info.html
+     
+     - uses: actions/upload-artifact@v3
+       with:
+        name: MyArtifacts
+        path: ArtifactsFolder
+        
+     - uses: actions/download-artifact@v3
+       with:
+        name: MyArtifacts
+        path: ArtifactsFolder
+
