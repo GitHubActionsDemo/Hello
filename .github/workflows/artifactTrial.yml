@@ -1,0 +1,22 @@
+name: ArtifactTrial
+
+on: 
+ push:
+  branches: master
+
+
+  
+jobs:
+  build:
+  
+    runs-on: Demo1
+    
+    steps:
+    
+     - uses: actions/checkout@v3
+     
+     - uses: actions/upload-artifact@v3
+       with:
+        name: MyArtifacts
+        
+    
